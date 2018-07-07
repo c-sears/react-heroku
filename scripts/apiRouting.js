@@ -1,4 +1,5 @@
 const survey1 = require('../assets/data/surveys/survey1.json')
+const raw_results = require('../assets/data/surveys/pew_raw_results.json')
 
 const getData = require('./calcResults')
 
@@ -18,11 +19,18 @@ const apiRouting = (app)=>{
 
     })
 
+    // API ROUTE TO GET RAW SURVEY RESULTS
+    app.get('/api/estResults', (req,res)=>{
+        res.json(raw_results);
+    })
+
     // API ROUTE FOR FRONT END TO SEND USERS SURVEY RESULTS TO DATABASE
     app.post('/api/sendResults', (req,res)=>{
         // Get user answers object from request body
-        const user_results = req.body.results
+        const user_results = req.body
         // Do magic that adds user results to database
+        res.send(200)
+        res.end()
     })
 
     // ADDS NEW USER TO DATABASE WITH SELECTED DEMOGRAPHICS

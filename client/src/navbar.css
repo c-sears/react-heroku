@@ -1,0 +1,30 @@
+
+/* BOOTSTRAP OVERRIDES */
+
+.navbar-default {
+  background: #EAF7D3;
+  border:0;
+}
+
+.navbar-brand {
+  padding: 6px 0px 0px 15px;
+}
+
+.nav-logo {
+  width: 130px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  background: #A1CD4D;
+  color: #ffffff;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: #5B8216;
+}
+
+label.btn-block{
+  text-align: left;
+}

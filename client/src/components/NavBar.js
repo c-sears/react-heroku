@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Nav } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { NavLink } from "react-router-dom";
+import brandLogo from '../assets/images/brand-logo-kwiri.png'
 
 
 class NavBar extends Component {
@@ -17,7 +18,7 @@ class NavBar extends Component {
                 <span className="icon-bar"></span>
               </Button>
               <a className="navbar-brand" href="/">
-                <img className="nav-logo" src="./assets/images/brand-logo-kwiri.png" alt="Kwiri" />
+                <img className="nav-logo" src={brandLogo} alt="Kwiri" />
               </a>
             </div>
 

@@ -10,7 +10,7 @@ class Panels extends Component {
     render() {
       return (
         <div>
-            <Panel className="panel panel-default">
+            <Panel className="panel panel-info">
                 <Panel.Heading>
                     <Panel.Title>{this.props.title}</Panel.Title>
                 </Panel.Heading>
@@ -18,7 +18,7 @@ class Panels extends Component {
                     {this.props.summary}
                     <br />
                     <br />
-                    <Button className="btn" style={buttonStyle} href="/#/survey">Go</Button>
+                    <Button className="btn btn-info" style={buttonStyle} href="/#/survey">Go</Button>
                 </Panel.Body>
             </Panel>          
         </div>

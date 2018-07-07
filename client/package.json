@@ -18,11 +18,12 @@
   "bugs": {
     "url": "https://github.com/cmg87/Project-2/issues"
   },
-  "homepage": "https://github.com/cmg87/Project-2#readme",
+  "homepage": "http://localhost:",
   "dependencies": {
     "ajv-keywords": "^3.2.0",
     "bootstrap": "^4.1.1",
     "chart.js": "^2.7.2",
+    "jquery": "^3.3.1",
     "popper.js": "^1.14.3",
     "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",

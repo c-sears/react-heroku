@@ -14,7 +14,13 @@ class SurveyList extends Component {
     }
 
     componentDidMount() {
-        fetch('/api/questions')
+        fetch('/api/questions',{
+            method:'GET',
+            headers:{
+                'Content-Type':'application/json',
+                'Accept':'application/json'
+            }
+        })
             .then(results => {
                 return results.json();
             }).then(data => {
