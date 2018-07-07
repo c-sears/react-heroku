@@ -29,10 +29,8 @@ require("./scripts/apiRouting")(app);
 // require("./routing/htmlRoutes")(app);
 
 
-db.sequelize.sync().then(function(){
     // START THE SERVER AND LISTEN FOR CHANGES
     app.listen(PORT, function() {
         console.log("Kwiri is running on http://localhost/:" + PORT + " and watching ... \n");
     });
-})
 
