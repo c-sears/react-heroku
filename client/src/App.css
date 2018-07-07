@@ -1,28 +1,45 @@
-.App {
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates:700,700i');
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,600');
+
+body {
+  background: #5A92A4
+}
+
+h1 {
+  color: #FFE488;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 700;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+h2 {
+  color: #B7D0D8;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-align: center;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.panel-default {
+  border: 0;
 }
 
-.App-title {
-  font-size: 1.5em;
+.panel-default>.panel-heading {
+  background: #2F7389;
+  color: #FFE488;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 }
 
-.App-intro {
-  font-size: large;
+.panel-default>.panel-heading+.panel-collapse>.panel-body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  background: #B7D0D8;
+  border-top: 0;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.frmRequired {
+  padding-left: 4px;
+  color: red;
 }
