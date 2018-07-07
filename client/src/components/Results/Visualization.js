@@ -22,12 +22,19 @@ class Vizualization extends Component {
         let panelsBuild = [];
 
         let resCodes = Object.keys(this.props.parsedRes);
-        for (let i=0;i<resCodes.length;i++) {
+        let newAnswers = [].concat.apply([],this.props.answers);
+        let codeArr = [];
+        for (let j=0;j<newAnswers.length;j+=2) {
+            codeArr.push(newAnswers[j]);
+        }
+        for (let i=0;i<codeArr.length;i++) {
             // Code for current Q
-            let code = Object.keys(this.props.parsedRes)[i];
+            // let code = Object.keys(this.props.parsedRes)[i];
+
+            let code = codeArr[i];
 
             // User response for current Q
-            let newAnswers = [].concat.apply([],this.props.answers);
+            // newAnswers is array from answers object
             let answerCodes = Object.keys(this.props.parsedRes[code]);
             let response = answerCodes[eval(newAnswers[newAnswers.indexOf(code)+1])-1];            
 
@@ -42,10 +49,11 @@ class Vizualization extends Component {
                         <h3 class="panel-title">'+text+'</h3> \
                     </div> \
                     <div class="panel-body"> \
-                        <div style="float:left"> \
-                            <h3>Your answer: '+response+'</h3> \
+                        <div class="container" style="float:left;width:50%;text-align:center;"> \
+                            <h3 style="font-size:3em;">Your answer:</h3> \
+                            <h2 style="font-size:4.5em;">'+response+'</h2> \
                         </div> \
-                        <div class="chart-container" style="position: relative; height:30vh; width:30vw; float:right"> \
+                        <div class="chart-container" style="position: relative; height:20vw; width:30vw; float:right; margin-right:30px"> \
                         <canvas id="'+code+'">&nbsp;</canvas> \
                         </div> \
                     </div> \
@@ -64,11 +72,16 @@ class Vizualization extends Component {
         console.log('building charts');
 
         let resCodes = Object.keys(this.props.parsedRes);
-        for (let i=0;i<resCodes.length;i++) {
+        let newAnswers = [].concat.apply([],this.props.answers);
+        let codeArr = [];
+        for (let j=0;j<newAnswers.length;j+=2) {
+            codeArr.push(newAnswers[j]);
+        }
+        for (let i=0;i<codeArr.length;i++) {
             // Code for current Q
-            let code = Object.keys(this.props.parsedRes)[i];
+            let code = codeArr[i];
 
-            this.multiSubCheck(code);
+            // this.multiSubCheck(code);
 
             // Type of current Q
             let type = this.props.survey[1][code].type;

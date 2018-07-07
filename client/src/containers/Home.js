@@ -12,7 +12,7 @@ class Home extends Component {
                     </Panel.Heading>
                     <Panel.Body>
                         <p className="introText">Kwiri is a survey portal which takes input on a topic of user interest, supplied by nationally conducted surveys, to generate a picture of how the views of the user compare/contrast to that of a large sample of the general public.</p>
-                        <h2>Surveys currently avaialble to Kwiri</h2>
+                        <h2>Surveys currently availalble to Kwiri</h2>
                         <SurveyList />
                         <SurveyList />
                         <SurveyList />

@@ -6,34 +6,35 @@ class Filter extends Component {
     constructor(props) {
         super(props);
 
-        this.handleClick = this.handleClick.bind(this);
+        // this.handleClick = this.handleClick.bind(this);
         this.filterData = {};
     }
 
     handleClick(){
+        let filterData = {}
         // Gather selected sex value
         let sex = document.getElementById("sex");
-        this.filterData["sex"] = sex.options[sex.selectedIndex].value;
+        filterData["sex"] = sex.options[sex.selectedIndex].value;
 
         // Gather selected age value
         let age = document.getElementById("age");
-        this.filterData["age"] = age.options[age.selectedIndex].value;
+        filterData["age"] = age.options[age.selectedIndex].value;
 
         // Gather selected income value
         let income = document.getElementById("inc");
-        this.filterData["inc"] = income.options[income.selectedIndex].value;
+        filterData["inc"] = income.options[income.selectedIndex].value;
 
         // Gather selected race value
         let race = document.getElementById("racem1");
-        this.filterData["racem1"] = race.options[race.selectedIndex].value;
+        filterData["racem1"] = race.options[race.selectedIndex].value;
 
         // Gather selected education value
         let education = document.getElementById("educ2");
-        this.filterData["educ2"] = education.options[education.selectedIndex].value;
+        filterData["educ2"] = education.options[education.selectedIndex].value;
 
-        console.log(this.filterData);
+        console.log(filterData);
 
-        this.props.filterState(this.filterData);
+        this.props.filterState(filterData);
 
     }
 

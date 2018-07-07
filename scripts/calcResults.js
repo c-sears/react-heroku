@@ -3,7 +3,7 @@ let Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 let getData = {
 
-    stats: function (gender, age, income, race, education) {
+    stats: function ({sex: gender, age: age, inc: income, racem1: race, educ2: education}) {
         //switch function for defining the age range of each user
         switch (true) {
             case(age <= 29):
@@ -22,7 +22,6 @@ let getData = {
         db.data.findAll({
             where: {sex: gender, age: age, inc: income, racem1: race, educ2: education}
         }).then(function (data) {
-            // console.log(data);
             let user = [];
             let stats = {
                 'eminuse': results1(data, 'eminuse'),
@@ -63,8 +62,55 @@ let getData = {
 
             };
             user.push(stats);
+            console.log(user);
             return user;
+
         });
+
+    },
+
+    newUser: function (user) {
+
+        db.data.create({
+            eminuse: user.eminuse,
+            intmob: user.intmob,
+            intfreq: user.intfreq,
+            home4nw: user.home4nw,
+            bbhome1: user.bbhome1,
+            device1a: user.device1a,
+            smart2: user.smart2,
+            snsint2: user.snsint2,
+            device1b: user.device1b,
+            device1c: user.device1c,
+            device1d: user.device1d,
+            web1a: user.web1a,
+            web1b: user.web1b,
+            web1c: user.web1c,
+            web1d: user.web1d,
+            web1e: user.web1e,
+            web1f: user.web1f,
+            web1g: user.web1g,
+            web1h: user.web1h,
+            sns2a: user.sns2a,
+            sns2b: user.sns2b,
+            sns2c: user.sns2c,
+            sns2d: user.sns2d,
+            sns2e: user.sns2e,
+            pial5a: user.pial5a,
+            pial5b: user.pial5b,
+            pial5c: user.pial5c,
+            pial5d: user.pial5d,
+            pial11: user.pial11,
+            pial12: user.pial12,
+            books1: user.books1,
+            books2a: user.books2a,
+            books2b: user.books2b,
+            books2c: user.books2c,
+        }).then(function (user) {
+            console.log('new user added to database')
+        }).catch(function (err) {
+            console.log(err);
+        })
 
     }
 
@@ -90,7 +136,7 @@ let results2 = function (data, question) {
     let usrNo = 0;
     let other = 0;
     for (let x in data) {
-        if (data[x][question] == 1 ) {
+        if (data[x][question] == 1) {
             usrYes++;
         } else if (data[x][question] == 2) {
             usrNo++;
@@ -129,10 +175,6 @@ let results3 = function (data, question) {
 };
 
 
-
-
-
-
 let scale = function (data, question) {
     let scale1 = 0;
     scale2 = 0;
@@ -165,3 +207,13 @@ let scale = function (data, question) {
 
 
 module.exports = getData;
+
+// let Obj = {
+//     sex: 2,
+//     age: 33,
+//     inc: 6,
+//     educ2: 5,
+//     racem1: 1
+// };
+//
+// getData.stats(Obj);

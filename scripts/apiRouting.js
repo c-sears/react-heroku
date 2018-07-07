@@ -13,7 +13,7 @@ const apiRouting = (app)=>{
 
     // API ROUTE TO GET OVERALL SURVEY RESULTS (RETURNS AN ARRAY OF OBJECTS CONTAINING EACH QUESTIONS RESULTS)
     // .. (e.g. [{"EMINUSE": {"1":"80","2""20"}}]) where '80' and '20' represent percentage of people with that answer
-    app.get('/api/getResults', (req,res)=>{
+    app.post('/api/getResults', (req,res)=>{
         const params = req.body.params
         res.json(getData.stats(params))
 
@@ -29,7 +29,7 @@ const apiRouting = (app)=>{
         // Get user answers object from request body
         const user_results = req.body
         // Do magic that adds user results to database
-        res.send(200)
+        res.sendStatus(200)
         res.end()
     })
 

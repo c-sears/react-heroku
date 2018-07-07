@@ -15,15 +15,6 @@ class Result extends Component {
     }
 
     componentWillMount() {
-        if (this.state.filterData !== null) {
-            fetch('/api/getResults', {
-                method: 'POST',
-                body: this.state.filterData
-            }).then(data =>{
-                console.log(data);
-                this.setState({response: data[0]});
-            });
-        }
         
         fetch('/api/estResults')
         .then(results => {
@@ -34,10 +25,27 @@ class Result extends Component {
         });
     }
 
+    componentDidUpdate() {
+        if (this.state.filterData !== null) {
+            fetch('/api/getResults', {
+                method: 'POST',
+                body: JSON.stringify(this.state.filterData),
+                headers: {
+                    'Accept': 'application/json',
+                    "Content-Type": "application/json; charset=utf-8"
+                }
+            }).then(data =>{
+                console.log(data);
+                this.setState({response: data[0]});
+            });
+        }
+    }
+
     filterState(filterData) {
         this.setState({
             filterData: filterData
         });
+        console.log(this.state)
     }
 
     render() {

@@ -3,6 +3,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require('path')
 
+const db = require('./models')
+
 // CREATE AND CONFIGURE EXPRESS
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -26,7 +28,11 @@ app.get('/',(req,res)=>{
 require("./scripts/apiRouting")(app);
 // require("./routing/htmlRoutes")(app);
 
-// START THE SERVER AND LISTEN FOR CHANGES
-app.listen(PORT, function() {
-  console.log("Kwiri is running on http://localhost/:" + PORT + " and watching ... \n");
-});
+
+db.sequelize.sync().then(function(){
+    // START THE SERVER AND LISTEN FOR CHANGES
+    app.listen(PORT, function() {
+        console.log("Kwiri is running on http://localhost/:" + PORT + " and watching ... \n");
+    });
+})
+

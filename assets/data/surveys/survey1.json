@@ -247,29 +247,6 @@
                 "INTMOB":"1",
                 "relation":"or"
             }
-        },
-
-        "BOOKS1": {
-            "type": "number",
-            "text": "During the past 12 months, about how many BOOKS did you read either all or part of the way through? Please include any print, electronic, or audiobooks you may have read or listened to."
-        },
-        
-        "BOOKS2": {
-            "type": "multi-sub",
-            "text": "Thinking about all of the books you have read in the past 12 months, were any of those..",
-            "choices":{
-                "a":"Printed books",
-                "b":"Audio books",
-                "c":"E-books"
-            },
-            "sub_choices": {
-                "1": "Yes",
-                "2": "No"
-            },
-            "conditions":{
-                "BOOKS1": 1,
-                "relation": "greater than"
-            }
         }
 
         
