@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route, HashRouter } from "react-router-dom";
-import './App.css';
 import NavBar from './components/NavBar';
 import Home from './containers/Home';
 import Survey from './containers/Survey';

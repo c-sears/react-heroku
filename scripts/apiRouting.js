@@ -14,7 +14,9 @@ const apiRouting = (app)=>{
     // API ROUTE TO GET OVERALL SURVEY RESULTS (RETURNS AN ARRAY OF OBJECTS CONTAINING EACH QUESTIONS RESULTS)
     // .. (e.g. [{"EMINUSE": {"1":"80","2""20"}}]) where '80' and '20' represent percentage of people with that answer
     app.post('/api/getResults', (req,res)=>{
-        const params = req.body.params
+        const params = req.body
+        console.log(`params below`)
+        console.log(params)
         res.json(getData.stats(params))
 
     })

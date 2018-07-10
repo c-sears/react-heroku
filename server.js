@@ -26,11 +26,11 @@ app.get('/',(req,res)=>{
 
 // CREATE AND CONIFIGURE ROUTING OF DATA
 require("./scripts/apiRouting")(app);
-// require("./routing/htmlRoutes")(app);
 
 
-    // START THE SERVER AND LISTEN FOR CHANGES
-    app.listen(PORT, function() {
-        console.log("Kwiri is running on http://localhost/:" + PORT + " and watching ... \n");
-    });
-
+// START SERVER AND CONNECT TO DATABASE
+db.sequelize.sync({}).then(function(){
+  app.listen(PORT, function(){
+      console.log("Listening on port:" + PORT);
+  })
+})
