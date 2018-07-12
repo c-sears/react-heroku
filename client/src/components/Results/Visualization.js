@@ -32,6 +32,7 @@ class Vizualization extends Component {
             // let code = Object.keys(this.props.parsedRes)[i];
 
             let code = codeArr[i];
+            console.log(code);
 
             // User response for current Q
             // newAnswers is array from answers object

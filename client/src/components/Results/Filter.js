@@ -112,7 +112,7 @@ class Filter extends Component {
                               <option value="3">High school graduate </option>
                               <option value="4">Some college, no degree </option>
                               <option value="5">Two-year associate degree</option>
-                              <option value="6">our-year college or university degree</option>
+                              <option value="6">Four-year college or university degree</option>
                               <option value="7">Some postgraduate or professional schooling</option>
                               <option value="8">Postgraduate or professional degree</option>
                             </FormControl>

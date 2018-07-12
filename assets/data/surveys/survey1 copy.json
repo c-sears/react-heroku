@@ -4,7 +4,7 @@
         "summary": "This survey contains questions about social media use in 2018 and attitudes toward the internet and whether Americans think it's good or bad for society."
     },
     {
-        "eminuse": {
+        "EMINUSE": {
             "type": "multi",
             "text": "Do you use the internet or email, at least occasionally?",
             "choices": {
@@ -13,7 +13,7 @@
             }
         },
 
-        "intmob": {
+        "INTMOB": {
             "type": "multi",
             "text": "Do you access the internet on a cell phone, tablet or other mobile handheld device, at least occasionally?",
             "choices": {
@@ -22,7 +22,7 @@
             }
         },
 
-        "intfreq": {
+        "INTFREQ": {
             "type": "multi",
             "text": "About how often do you use the internet?",
             "choices":{
@@ -32,13 +32,13 @@
                 "4":"Less often"
             },
             "conditions": {
-                "eminuse": "1",
-                "intmob": "1",
+                "EMINUSE": "1",
+                "INTMOB": "1",
                 "relation": "or"
             }
         },
 
-        "home4nw": {
+        "HOME4NW": {
             "type": "multi",
             "text": "Do you currently subscribe to internet service at HOME?",
             "choices": {
@@ -46,13 +46,13 @@
                 "2": "No"
             },
             "conditions": {
-                "eminue": "1",
-                "intmob": "1",
+                "EMINUSE": "1",
+                "INTMOB": "1",
                 "relation": "or"
             }
         },
 
-        "bbhome1": {
+        "BBHOME1": {
             "type": "multi",
             "text": "Do you subscribe to dial-up internet service at home... OR do you subscribe to a higher-speed broadband service such as DSL, cable, or fiber optic service?",
             "choices":{
@@ -60,11 +60,11 @@
                 "2":"Higher-speed"
             },
             "conditions": {
-                "home4nw": "1"
+                "HOME4NW": "1"
             }
         },
 
-        "device1a": {
+        "DEVICE1a": {
             "type": "multi",
             "text": "Next, do you have a cell phone, or Not?",
             "choices": {
@@ -73,7 +73,7 @@
             }
         },
 
-        "smart2": {
+        "SMART2": {
             "type": "multi",
             "text": "Is your cell phone a smartphone, or Not?",
             "choices": {
@@ -81,11 +81,11 @@
                 "2": "No"
             },
             "conditions": {
-                "device1a": "1"
+                "DEVICE1a": "1"
             }
         },
 
-        "snsint2": {
+        "SNSINT2": {
             "type": "multi",
             "text": "Do you ever use social media sites like Facebook, Twitter or Instagram?",
             "choices": {
@@ -94,13 +94,13 @@
             }
         },
 
-        "device1": {
+        "DEVICE1": {
             "type": "multi-sub",
             "text": "Which of the following items do you own?",
             "choices":{
-                "b":"Tablet",
-                "c":"Desktop or Laptop",
-                "d":"Gaming Console"
+                "a":"Tablet",
+                "b":"Desktop or Laptop",
+                "c":"Gaming Console"
             },
             "sub_choices":{
                 "1":"Yes",
@@ -108,7 +108,7 @@
             }
         },
 
-        "web1": {
+        "WEB1": {
             "type": "multi-sub",
             "text": "Please tell me if you ever use any of the following social media sites online or on your cell phone.",
             "choices":{
@@ -126,14 +126,14 @@
                 "2":"No"
             },
             "conditions": {
-                "eminuse": "1",
-                "intmob": "1",
-                "device1a": "1",
+                "EMINUSE": "1",
+                "INTMOB": "1",
+                "DEVICE1a": "1",
                 "relation": "or"
             }
         },
 
-        "sns2a": {
+        "SNS2a": {
             "type": "multi",
             "text": "About how often do you visit or use Twitter?",
             "choices": {
@@ -144,11 +144,11 @@
                 "5":"Less often"
             },
             "conditions": {
-                "web1a": "1"
+                "WEB1a": "1"
             }
         },
 
-        "sns2b": {
+        "SNS2b": {
             "type": "multi",
             "text": "About how often do you visit or use Instagram?",
             "choices": {
@@ -159,11 +159,11 @@
                 "5":"Less often"
             },
             "conditions": {
-                "web1b": "1"
+                "WEB1b": "1"
             }
         },
 
-        "sns2c": {
+        "SNS2c": {
             "type": "multi",
             "text": "About how often do you visit or use Facebook?",
             "choices": {
@@ -174,11 +174,11 @@
                 "5":"Less often"
             },
             "conditions": {
-                "web1c": "1"
+                "WEB1c": "1"
             }
         },
 
-        "sns2d": {
+        "SNS2d": {
             "type": "multi",
             "text": "About how often do you visit or use Snapchat?",
             "choices": {
@@ -189,11 +189,11 @@
                 "5":"Less often"
             },
             "conditions": {
-                "web1d": "1"
+                "WEB1d": "1"
             }
         },
 
-        "sns2e": {
+        "SNS2e": {
             "type": "multi",
             "text": "About how often do you visit or use YouTube?",
             "choices": {
@@ -204,11 +204,11 @@
                 "5":"Less often"
             },
             "conditions": {
-                "web1e": "1"
+                "WEB1e": "1"
             }
         },
 
-        "pial5": {
+        "PIAL5": {
             "type": "multi-sub",
             "text": "How difficult would it be, if at all, to give up the following things in your life?",
             "choices":{
@@ -225,7 +225,7 @@
             }
         },
 
-        "pial11": {
+        "PIAL11": {
             "type": "multi",
             "text": "Overall, when you add up all the advantages and disadvantages of the internet, would you say the internet has mostly been a _____ for society?",
             "choices":{
@@ -234,7 +234,7 @@
             }
         },
 
-        "pial12": {
+        "PIAL12": {
             "type": "multi",
             "text": "How about you, personally? Overall, when you add up all the advantages and disadvantages of the internet, would you say the internet has mostly been a _____ for society?",
             "choices":{
@@ -243,8 +243,8 @@
                 "3":"Some of both"
             },
             "conditions":{
-                "eminuse": "1",
-                "intmob":"1",
+                "EMINUSE": "1",
+                "INTMOB":"1",
                 "relation":"or"
             }
         }

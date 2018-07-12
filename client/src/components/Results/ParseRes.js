@@ -16,15 +16,19 @@ class ParseRes extends Component {
         // CREATE PARSEDRES OBJECT
         // Check each item in survey
         for (let code in this.props.survey[1]) {
+            console.log(this.props.survey[1]);
 
             let surveyChoices = this.props.survey[1][code]['choices'];
             let answersObj = {}
+            console.log(surveyChoices);
+            console.log(code);
 
             // Find any matching keys in response
             if (this.props.response[code]) {
 
                 // Add matching keys from survey & values from response to new object
                 for (let i=1; i<Object.keys(this.props.response[code]).length + 1; i++) {
+                    console.log(surveyChoices[i]);
                     answersObj[surveyChoices[i]] = this.props.response[code][parseInt(i)];
                 }
 

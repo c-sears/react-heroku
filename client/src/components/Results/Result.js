@@ -11,6 +11,7 @@ class Result extends Component {
             filterData: null
         };
         this.filterState = this.filterState.bind(this);
+        this.filterRender = this.filterRender.bind(this);
         this.surveykey = require('../../assets/survey1answerkey.json');
     }
 
@@ -25,8 +26,21 @@ class Result extends Component {
         });
     }
 
-    componentDidUpdate() {
-        if (this.state.filterData !== null) {
+
+
+    filterState(filterData) {
+        console.log(filterData);
+        this.setState({
+            filterData: filterData,
+            response: null
+        }, function() {
+            console.log(this.state.filterData);
+            console.log(this.state.response);
+        });
+    }
+
+    filterRender() {
+        if (this.state.filterData !== null && this.state.response === null) {
             fetch('/api/getResults', {
                 method: 'POST',
                 body: JSON.stringify(this.state.filterData),
@@ -34,21 +48,19 @@ class Result extends Component {
                     'Accept': 'application/json',
                     "Content-Type": "application/json; charset=utf-8"
                 }
+            }).then(function(response){
+                return response.json();
             }).then(data =>{
                 console.log(data);
                 this.setState({response: data[0]});
+            }, function() {
+                console.log(this.state.response);
             });
         }
     }
 
-    filterState(filterData) {
-        this.setState({
-            filterData: filterData
-        });
-        console.log(this.state)
-    }
-
     render() {
+        this.filterRender();
         
         if (this.state.response === null) {
             return (

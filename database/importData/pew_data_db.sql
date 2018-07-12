@@ -78,7 +78,7 @@ CREATE TABLE data (
 
 
 
-
+SET GLOBAL local_infile=1;
 LOAD DATA LOCAL INFILE './survey.csv'
 INTO TABLE data
 FIELDS TERMINATED BY ','

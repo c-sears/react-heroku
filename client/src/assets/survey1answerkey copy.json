@@ -4,7 +4,7 @@
         "summary": "This survey contains questions about social media use in 2018 and attitudes toward the internet and whether Americans think it's good or bad for society."
     },
     {
-        "eminuse": {
+        "EMINUSE": {
             "type": "multi",
             "text": "Do you use the internet or email, at least occasionally?",
             "choices": {
@@ -13,7 +13,7 @@
             }
         },
 
-        "intmob": {
+        "INTMOB": {
             "type": "multi",
             "text": "Do you access the internet on a cell phone, tablet or other mobile handheld device, at least occasionally?",
             "choices": {
@@ -22,7 +22,7 @@
             }
         },
 
-        "intfreq": {
+        "INTFREQ": {
             "type": "multi",
             "text": "About how often do you use the internet?",
             "choices":{
@@ -32,13 +32,13 @@
                 "4":"Less often"
             },
             "conditions": {
-                "eminuse": "1",
-                "intmob": "1",
+                "EMINUSE": "1",
+                "INTMOB": "1",
                 "relation": "or"
             }
         },
 
-        "home4nw": {
+        "HOME4NW": {
             "type": "multi",
             "text": "Do you currently subscribe to internet service at HOME?",
             "choices": {
@@ -46,13 +46,13 @@
                 "2": "No"
             },
             "conditions": {
-                "eminuse": "1",
-                "intmob": "1",
+                "EMINUSE": "1",
+                "INTMOB": "1",
                 "relation": "or"
             }
         },
 
-        "bbhome1": {
+        "BBHOME1": {
             "type": "multi",
             "text": "Do you subscribe to dial-up internet service at home... OR do you subscribe to a higher-speed broadband service such as DSL, cable, or fiber optic service?",
             "choices":{
@@ -60,11 +60,11 @@
                 "2":"Higher-speed"
             },
             "conditions": {
-                "home4nw": "1"
+                "HOME4NW": "1"
             }
         },
 
-        "device1a": {
+        "DEVICE1a": {
             "type": "multi",
             "text": "Next, do you have a cell phone, or Not?",
             "choices": {
@@ -73,7 +73,7 @@
             }
         },
 
-        "smart2": {
+        "SMART2": {
             "type": "multi",
             "text": "Is your cell phone a smartphone, or Not?",
             "choices": {
@@ -81,11 +81,11 @@
                 "2": "No"
             },
             "conditions": {
-                "device1a": "1"
+                "DEVICE1a": "1"
             }
         },
 
-        "snsint2": {
+        "SNSINT2": {
             "type": "multi",
             "text": "Do you ever use social media sites like Facebook, Twitter or Instagram?",
             "choices": {
@@ -94,7 +94,7 @@
             }
         },
 
-        "device1b": {
+        "DEVICE1a": {
             "type": "multi",
             "text": "Do you own a tablet?",
             "choices":{
@@ -103,7 +103,7 @@
             }
         },
 
-        "device1c": {
+        "DEVICE1b": {
             "type": "multi",
             "text": "Do you own a desktop or laptop?",
             "choices":{
@@ -112,7 +112,7 @@
             }
         },
 
-        "device1d": {
+        "DEVICE1c": {
             "type": "multi",
             "text": "Do you own a gaming console?",
             "choices":{
@@ -121,7 +121,7 @@
             }
         },
 
-        "web1a": {
+        "WEB1a": {
             "type": "multi",
             "text": "Do you ever use Twitter online or on your cell phone.",
             "choices":{
@@ -129,14 +129,14 @@
                 "2":"No"
             },
             "conditions": {
-                "eminuse": "1",
-                "intmob": "1",
-                "device1a": "1",
+                "EMINUSE": "1",
+                "INTMOB": "1",
+                "DEVICE1a": "1",
                 "relation": "or"
             }
         },
 
-        "web1b": {
+        "WEB1b": {
             "type": "multi",
             "text": "Do you ever use Instagram online or on your cell phone.",
             "choices":{
@@ -144,14 +144,14 @@
                 "2":"No"
             },
             "conditions": {
-                "eminuse": "1",
-                "intmob": "1",
-                "device1a": "1",
+                "EMINUSE": "1",
+                "INTMOB": "1",
+                "DEVICE1a": "1",
                 "relation": "or"
             }
         },
 
-        "web1c": {
+        "WEB1c": {
             "type": "multi",
             "text": "Do you ever use Facebook online or on your cell phone.",
             "choices":{
@@ -159,14 +159,14 @@
                 "2":"No"
             },
             "conditions": {
-                "eminuse": "1",
-                "intmob": "1",
-                "device1a": "1",
+                "EMINUSE": "1",
+                "INTMOB": "1",
+                "DEVICE1a": "1",
                 "relation": "or"
             }
         },
 
-        "web1d": {
+        "WEB1d": {
             "type": "multi",
             "text": "Do you ever use Snapchat online or on your cell phone.",
             "choices":{
@@ -174,14 +174,14 @@
                 "2":"No"
             },
             "conditions": {
-                "eminuse": "1",
-                "intmob": "1",
-                "device1a": "1",
+                "EMINUSE": "1",
+                "INTMOB": "1",
+                "DEVICE1a": "1",
                 "relation": "or"
             }
         },
 
-        "web1e": {
+        "WEB1e": {
             "type": "multi",
             "text": "Do you ever use YouTube online or on your cell phone.",
             "choices":{
@@ -189,14 +189,14 @@
                 "2":"No"
             },
             "conditions": {
-                "eminuse": "1",
-                "intmob": "1",
-                "device1a": "1",
+                "EMINUSE": "1",
+                "INTMOB": "1",
+                "DEVICE1a": "1",
                 "relation": "or"
             }
         },
 
-        "web1f": {
+        "WEB1f": {
             "type": "multi",
             "text": "Do you ever use WhatsApp online or on your cell phone.",
             "choices":{
@@ -204,14 +204,14 @@
                 "2":"No"
             },
             "conditions": {
-                "eminuse": "1",
-                "intmob": "1",
-                "device1a": "1",
+                "EMINUSE": "1",
+                "INTMOB": "1",
+                "DEVICE1a": "1",
                 "relation": "or"
             }
         },
 
-        "web1g": {
+        "WEB1g": {
             "type": "multi",
             "text": "Do you ever use Pinterest online or on your cell phone.",
             "choices":{
@@ -219,14 +219,14 @@
                 "2":"No"
             },
             "conditions": {
-                "eminuse": "1",
-                "intmob": "1",
-                "device1a": "1",
+                "EMINUSE": "1",
+                "INTMOB": "1",
+                "DEVICE1a": "1",
                 "relation": "or"
             }
         },
 
-        "web1h": {
+        "WEB1h": {
             "type": "multi",
             "text": "Do you ever use LinkedIn online or on your cell phone.",
             "choices":{
@@ -234,14 +234,14 @@
                 "2":"No"
             },
             "conditions": {
-                "eminuse": "1",
-                "intmob": "1",
-                "device1a": "1",
+                "EMINUSE": "1",
+                "INTMOB": "1",
+                "DEVICE1a": "1",
                 "relation": "or"
             }
         },
 
-        "sns2a": {
+        "SNS2a": {
             "type": "multi",
             "text": "About how often do you visit or use Twitter?",
             "choices": {
@@ -252,11 +252,11 @@
                 "5":"Less often"
             },
             "conditions": {
-                "web1a": "1"
+                "WEB1a": "1"
             }
         },
 
-        "sns2b": {
+        "SNS2b": {
             "type": "multi",
             "text": "About how often do you visit or use Instagram?",
             "choices": {
@@ -267,11 +267,11 @@
                 "5":"Less often"
             },
             "conditions": {
-                "web1b": "1"
+                "WEB1b": "1"
             }
         },
 
-        "sns2c": {
+        "SNS2c": {
             "type": "multi",
             "text": "About how often do you visit or use Facebook?",
             "choices": {
@@ -282,11 +282,11 @@
                 "5":"Less often"
             },
             "conditions": {
-                "web1c": "1"
+                "WEB1c": "1"
             }
         },
 
-        "sns2d": {
+        "SNS2d": {
             "type": "multi",
             "text": "About how often do you visit or use Snapchat?",
             "choices": {
@@ -297,11 +297,11 @@
                 "5":"Less often"
             },
             "conditions": {
-                "web1d": "1"
+                "WEB1d": "1"
             }
         },
 
-        "sns2e": {
+        "SNS2e": {
             "type": "multi",
             "text": "About how often do you visit or use YouTube?",
             "choices": {
@@ -312,11 +312,11 @@
                 "5":"Less often"
             },
             "conditions": {
-                "web1e": "1"
+                "WEB1e": "1"
             }
         },
 
-        "pial5a": {
+        "PIAL5a": {
             "type": "multi",
             "text": "How difficult would it be, if at all, to give up your television in your life?",
             "choices":{
@@ -327,7 +327,7 @@
             }
         },
 
-        "pial5b": {
+        "PIAL5b": {
             "type": "multi",
             "text": "How difficult would it be, if at all, to give up your cell phone in your life?",
             "choices":{
@@ -338,7 +338,7 @@
             }
         },
 
-        "pial5c": {
+        "PIAL5c": {
             "type": "multi",
             "text": "How difficult would it be, if at all, to give up the internet in your life?",
             "choices":{
@@ -349,7 +349,7 @@
             }
         },
 
-        "pial5d": {
+        "PIAL5d": {
             "type": "multi",
             "text": "How difficult would it be, if at all, to give up social media in your life?",
             "choices":{
@@ -360,7 +360,7 @@
             }
         },
 
-        "pial11": {
+        "PIAL11": {
             "type": "multi",
             "text": "Overall, when you add up all the advantages and disadvantages of the internet, would you say the internet has mostly been a _____ for society?",
             "choices":{
@@ -369,7 +369,7 @@
             }
         },
 
-        "pial12": {
+        "PIAL12": {
             "type": "multi",
             "text": "How about you, personally? Overall, when you add up all the advantages and disadvantages of the internet, would you say the internet has mostly been a _____ for society?",
             "choices":{
@@ -378,9 +378,53 @@
                 "3":"Some of both"
             },
             "conditions":{
-                "eminuse": "1",
-                "intmob":"1",
+                "EMINUSE": "1",
+                "INTMOB":"1",
                 "relation":"or"
+            }
+        },
+
+        "BOOKS1": {
+            "type": "number",
+            "text": "During the past 12 months, about how many BOOKS did you read either all or part of the way through? Please include any print, electronic, or audiobooks you may have read or listened to."
+        },
+        
+        "BOOKS2a": {
+            "type": "multi",
+            "text": "Thinking about all of the books you have read in the past 12 months, were any of those printed books?",
+            "choices":{
+                "1": "Yes",
+                "2": "No"
+            },
+            "conditions":{
+                "BOOKS1": 1,
+                "relation": "greater than"
+            }
+        },
+
+        "BOOKS2b": {
+            "type": "multi",
+            "text": "Thinking about all of the books you have read in the past 12 months, were any of those audio books?",
+            "choices":{
+                "1": "Yes",
+                "2": "No"
+            },
+            "conditions":{
+                "BOOKS1": 1,
+                "relation": "greater than"
+            }
+        },
+
+        "BOOKS2c": {
+            "type": "multi",
+            "text": "Thinking about all of the books you have read in the past 12 months, were any of those e-books?",
+            "choices":{
+                "1": "Yes",
+                "2": "No"
+            },
+            "conditions":{
+                "BOOKS1": 1,
+                "relation": "greater than"
             }
         }
 
