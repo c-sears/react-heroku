@@ -3,24 +3,33 @@ let Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 let getData = {
 
-    stats: function ({sex: gender, age: age, inc: income, racem1: race, educ2: education}) {
+    stats: function ({sex, age, inc, racem1, educ2}, cb) {
+
+        
+        let gender = parseInt(sex)
+        let ages = parseInt(age)
+        let income = parseInt(inc)
+        let race = parseInt(racem1)
+        let education = parseInt(educ2)
+
         //switch function for defining the age range of each user
         switch (true) {
-            case(age <= 29):
-                age = {[Op.between]: [17, 30]};
+            case(ages <= 29):
+                ages = {[Op.between]: [17, 30]};
                 break;
-            case (age <= 49):
-                age = {[Op.between]: [29, 50]};
+            case (ages <= 49):
+                ages = {[Op.between]: [29, 50]};
                 break;
-            case (age <= 64):
-                age = {[Op.between]: [49, 65]};
-            case (age > 64):
-                age = {[Op.between]: [64, 100]};
+            case (ages <= 64):
+                ages = {[Op.between]: [49, 65]};
+            case (ages > 64):
+                ages = {[Op.between]: [64, 100]};
 
         }
 
+
         db.data.findAll({
-            where: {sex: gender, age: age, inc: income, racem1: race, educ2: education}
+            where: {sex: gender, age: ages, inc: income, racem1: race, educ2: education}
         }).then(function (data) {
             let user = [];
             let stats = {
@@ -62,12 +71,16 @@ let getData = {
 
             };
             user.push(stats);
-            console.log(user);
             return user;
 
-        });
+        }).then(result =>{
+            cb(result)
+        })
+
+        
 
     },
+    
 
     newUser: function (user) {
 
@@ -115,6 +128,7 @@ let getData = {
     }
 
 };
+
 
 let results1 = function (data, question) {
     let usrYes = 0;

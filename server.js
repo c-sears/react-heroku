@@ -10,8 +10,6 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 
-console.log(`we are in ${process.env.NODE_ENV}`)
-
 // DIRECTS EXPRESS TO HANDLE PARSING AND SERVE STATIC FILES
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -19,7 +17,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,'client/build')))
 
 
-// SERVE UP INDEX.HTML (REACT APPLICATION) TO ALL UNMATCHED REQUEST
+// SERVE UP INDEX.HTML (REACT APPLICATION) TO ALL REQUESTS
 app.get('/',(req,res)=>{
   res.sendFile(path.resolve(__dirname,'client/build','index.html'))
 })
