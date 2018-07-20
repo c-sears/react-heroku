@@ -12,25 +12,37 @@ class Filter extends Component {
 
     handleClick(){
         let filterData = {}
+        let sex, age, income, race, education;
+
         // Gather selected sex value
-        let sex = document.getElementById("sex");
-        filterData["sex"] = sex.options[sex.selectedIndex].value;
+        sex = document.getElementById("sex");
+        if (sex.options[sex.selectedIndex].value !== "none") {
+          filterData["sex"] = sex.options[sex.selectedIndex].value;
+        }
 
         // Gather selected age value
-        let age = document.getElementById("age");
-        filterData["age"] = age.options[age.selectedIndex].value;
+        age = document.getElementById("age");
+        if (age.options[age.selectedIndex].value !== "none") {
+          filterData["age"] = age.options[age.selectedIndex].value;
+        }
 
         // Gather selected income value
-        let income = document.getElementById("inc");
-        filterData["inc"] = income.options[income.selectedIndex].value;
+        income = document.getElementById("inc");
+        if (income.options[income.selectedIndex].value !== "none") {
+          filterData["inc"] = income.options[income.selectedIndex].value;
+        }
 
         // Gather selected race value
-        let race = document.getElementById("racem1");
-        filterData["racem1"] = race.options[race.selectedIndex].value;
+        race = document.getElementById("racem1");
+        if (race.options[race.selectedIndex].value !== "none") {
+          filterData["racem1"] = race.options[race.selectedIndex].value;
+        }
 
         // Gather selected education value
-        let education = document.getElementById("educ2");
-        filterData["educ2"] = education.options[education.selectedIndex].value;
+        education = document.getElementById("educ2");
+        if (education.options[education.selectedIndex].value !== "none") {
+          filterData["educ2"] = education.options[education.selectedIndex].value;
+        }
 
         console.log(filterData);
 
@@ -55,6 +67,7 @@ class Filter extends Component {
                           <FormGroup controlId="formControlsSelect">
                             <ControlLabel>Sex</ControlLabel>
                             <FormControl componentClass="select" placeholder="select sex" id="sex">
+                              <option value="none">Select...</option>
                               <option value="1">Male</option>
                               <option value="2">Female</option>
                             </FormControl>
@@ -64,6 +77,7 @@ class Filter extends Component {
                           <FormGroup controlId="formControlsSelect">
                             <ControlLabel>Age</ControlLabel>
                             <FormControl componentClass="select" placeholder="select age" id="age">
+                              <option value="none">Select...</option>
                               <option value="29">Under 30</option>
                               <option value="49">30 - 49</option>
                               <option value="64">50 - 64</option>
@@ -75,6 +89,7 @@ class Filter extends Component {
                           <FormGroup controlId="formControlsSelect">
                             <ControlLabel>Income</ControlLabel>
                             <FormControl componentClass="select" placeholder="select income" id="inc">
+                              <option value="none">Select...</option>
                               <option value="1">Less than $10,000</option>
                               <option value="2">10 to under $20,000</option>
                               <option value="3">20 to under $30,000</option>
@@ -93,6 +108,7 @@ class Filter extends Component {
                           <FormGroup controlId="formControlsSelect">
                             <ControlLabel>Race</ControlLabel>
                             <FormControl componentClass="select" placeholder="select income" id="racem1">
+                              <option value="none">Select...</option>
                               <option value="1">White</option>
                               <option value="2">Black or African-American</option>
                               <option value="3">Asian or Asian-American</option>
@@ -107,6 +123,7 @@ class Filter extends Component {
                           <FormGroup controlId="formControlsSelect">
                             <ControlLabel>Education</ControlLabel>
                             <FormControl componentClass="select" placeholder="select education" id="educ2">
+                              <option value="none">Select...</option>
                               <option value="1">Less than high school </option>
                               <option value="2">High school incomplete </option>
                               <option value="3">High school graduate </option>

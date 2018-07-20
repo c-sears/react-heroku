@@ -3,33 +3,40 @@ let Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 let getData = {
 
-    stats: function ({sex, age, inc, racem1, educ2}, cb) {
+    stats: function (filterData, cb) {
+        let query = {};
 
-        
-        let gender = parseInt(sex)
-        let ages = parseInt(age)
-        let income = parseInt(inc)
-        let race = parseInt(racem1)
-        let education = parseInt(educ2)
-
-        //switch function for defining the age range of each user
-        switch (true) {
-            case(ages <= 29):
-                ages = {[Op.between]: [17, 30]};
-                break;
-            case (ages <= 49):
-                ages = {[Op.between]: [29, 50]};
-                break;
-            case (ages <= 64):
-                ages = {[Op.between]: [49, 65]};
-            case (ages > 64):
-                ages = {[Op.between]: [64, 100]};
-
+        if (filterData.sex) {
+            query.sex = parseInt(filterData.sex);
+        }
+        if (filterData.age) {
+            switch (true) {
+                case(parseInt(filterData.age) <= 29):
+                    query.age = {[Op.between]: [17, 30]};
+                    break;
+                case (parseInt(filterData.age) <= 49):
+                    query.age = {[Op.between]: [29, 50]};
+                    break;
+                case (parseInt(filterData.age) <= 64):
+                    query.age = {[Op.between]: [49, 65]};
+                case (parseInt(filterData.age) > 64):
+                    query.age = {[Op.between]: [64, 100]};
+            }
+        }
+        if (filterData.inc) {
+            query.inc = parseInt(filterData.inc);
+        }
+        if (filterData.racem1) {
+            query.racem1 = parseInt(filterData.racem1);
+        }
+        if (filterData.educ2) {
+            query.educ2 = parseInt(filterData.educ2);
         }
 
 
+
         db.data.findAll({
-            where: {sex: gender, age: ages, inc: income, racem1: race, educ2: education}
+            where: query
         }).then(function (data) {
             let user = [];
             let stats = {
