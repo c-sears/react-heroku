@@ -103,8 +103,14 @@ class CurrentQ extends Component {
                 }
             }
         }
-        this.props.updateAnswers(answer);
-        this.props.nextQuestion();
+
+        if (Object.keys(answer).length !== this.props.choices.length) {
+            alert("Please select an answer for all questions before proceeding");
+        }
+        else {
+            this.props.updateAnswers(answer);
+            this.props.nextQuestion();
+        }
     }
 
 
