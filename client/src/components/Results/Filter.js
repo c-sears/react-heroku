@@ -46,7 +46,12 @@ class Filter extends Component {
 
         console.log(filterData);
 
-        this.props.filterState(filterData);
+        if (Object.keys(filterData).length === 0) {
+          alert("Please select filter criteria before submitting");
+        }
+        else {
+          this.props.filterState(filterData);
+        }
 
     }
 

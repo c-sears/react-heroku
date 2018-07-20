@@ -95,6 +95,13 @@ class Vizualization extends Component {
                 answersArr.push(answerCodes[j]);
                 chartData.push(this.props.parsedRes[code][answerCodes[j]]);
             }
+            console.log(chartData);
+            console.log(answersArr);
+
+            if (answersArr.includes('undefined')) {
+                let index = answersArr.indexOf('undefined');
+                answersArr.splice(index,1,"No answer");
+            }
 
             // Chart type check
             if (type === 'multi') {
